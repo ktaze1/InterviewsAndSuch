@@ -1,4 +1,11 @@
+/*
+Merge two sorted linked lists and return it as a new sorted list. The new list should be made by splicing together the nodes of the first two lists.
 
+Example:
+
+Input: 1->2->4, 1->3->4
+Output: 1->1->2->3->4->4
+*/
 
 struct ListNode {
     int val;
@@ -9,6 +16,7 @@ struct ListNode {
 };
 
 class Solution {
+
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         if(l2 == nullptr)
@@ -19,7 +27,7 @@ public:
         ListNode * dummy = new ListNode(0);
         ListNode * curr = dummy;
         
-        while(l1!=nullptr and l2!=nullptr)
+        while(l1!=nullptr && l2!=nullptr)
         {
             if(l1->val == l2->val)
             {
@@ -45,7 +53,7 @@ public:
         }
     
         
-        if(l2 == nullptr and l1!=nullptr)
+        if(l2 == nullptr && l1!=nullptr)
         {
             
             while(l1!=nullptr)
@@ -56,7 +64,7 @@ public:
                 l1 = l1->next;
             }
         }
-        if(l2!=nullptr and l1 == nullptr)
+        if(l2!=nullptr && l1 == nullptr)
         {
             while(l2!=nullptr)
            {
@@ -72,3 +80,8 @@ public:
     }
    
 };
+
+
+int main(){
+    return 0;
+}
